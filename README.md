@@ -125,6 +125,44 @@ Essas métricas devem ser monitoradas a cada ciclo de entrega e discutidas com o
 
 ---
 
+## 🌍 Cenário Adicional – Validação Multi-Regional e Conformidade com Privacidade
+
+### 🧭 Estratégia para Validação Geolocalizada
+
+A aplicação passou a operar em diferentes regiões (LATAM, EMEA, NA), sendo necessário validar o comportamento regional e o tratamento de dados sensíveis.
+
+#### 🎯 Simulação de Usuários por Região
+
+- Simulação de headers de geolocalização (`X-Forwarded-For`, `GeoIP`)
+- Uso de proxies ou serviços como BrowserStack/Geonode
+- Dados formatados regionalmente:
+  - **LATAM**: CPF, idioma PT-BR
+  - **EMEA**: NIN (UK), idioma EN/DE/FR
+  - **NA**: SSN, idioma EN-US
+
+#### 🔍 Validações por Região
+
+- Tradução/localização da interface e mensagens de erro
+- Validação de caracteres e formatos específicos
+- Diferenças de latência e comportamento sob rede limitada
+- Diferenciação de políticas legais e consentimento
+
+---
+
+### ⚙️ Testes Paralelos e Orquestração Distribuída
+
+#### 🧪 Execução Paralela por Região
+
+- **GitHub Actions Matrix Strategy**:
+  ```yaml
+  strategy:
+    matrix:
+      region: [LATAM, EMEA, NA]
+      browser: [chrome, firefox]
+
+
+---
+
 ## 🧪 Execução dos Testes
 
 Os testes automatizados estão escritos com **Cypress**, usando o padrão **Page Object Model (POM)**. Os relatórios são gerados com **Allure Reports** e a execução em CI está configurada com **GitHub Actions**.
