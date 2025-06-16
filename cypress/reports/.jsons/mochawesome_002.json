@@ -1,0 +1,143 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-06-16T16:31:34.498Z",
+    "end": "2025-06-16T16:31:51.403Z",
+    "duration": 16905,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "1ed2dc7e-c913-4e58-877a-1aaf3c209397",
+      "title": "",
+      "fullFile": "cypress\\e2e\\ocr_api\\upload_api.cy.js",
+      "file": "cypress\\e2e\\ocr_api\\upload_api.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "59263ef6-f9a0-4710-8d8e-f298cf0ec20c",
+          "title": "📦 Testes de Upload via OCR API",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "✅ Upload de arquivo válido",
+              "fullTitle": "📦 Testes de Upload via OCR API ✅ Upload de arquivo válido",
+              "timedOut": null,
+              "duration": 149,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_UploadApiPage.default.enviarArquivo('documento_valido.pdf', 200);",
+              "err": {},
+              "uuid": "d1bd31b1-cab0-49d9-a857-4685ec369f7f",
+              "parentUUID": "59263ef6-f9a0-4710-8d8e-f298cf0ec20c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "❌ Upload com falha por tamanho excedido (>10MB)",
+              "fullTitle": "📦 Testes de Upload via OCR API ❌ Upload com falha por tamanho excedido (>10MB)",
+              "timedOut": null,
+              "duration": 15013,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_UploadApiPage.default.enviarArquivo('documento_invalido_maior_10mb.pdf', 413);",
+              "err": {},
+              "uuid": "c29251c3-f37f-41ff-956f-157e848c5fde",
+              "parentUUID": "59263ef6-f9a0-4710-8d8e-f298cf0ec20c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "❌ Simulação de falha no OCR (resposta 500)",
+              "fullTitle": "📦 Testes de Upload via OCR API ❌ Simulação de falha no OCR (resposta 500)",
+              "timedOut": null,
+              "duration": 1129,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "it('Deve simular erro 500 na API OCR e validar fallback', () => {\n  _UploadApiPage.default.mockErro500(); // intercepta antes da chamada\n  _UploadApiPage.default.uploadArquivoValidoComErroEsperado(500);\n});",
+              "err": {},
+              "uuid": "cc74c11b-7b17-4035-b835-679624947966",
+              "parentUUID": "59263ef6-f9a0-4710-8d8e-f298cf0ec20c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "d1bd31b1-cab0-49d9-a857-4685ec369f7f",
+            "c29251c3-f37f-41ff-956f-157e848c5fde",
+            "cc74c11b-7b17-4035-b835-679624947966"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 16291,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress\\reports\\.jsons",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

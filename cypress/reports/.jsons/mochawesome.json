@@ -1,0 +1,152 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 1,
+    "pending": 0,
+    "failures": 2,
+    "start": "2025-06-16T15:38:21.546Z",
+    "end": "2025-06-16T15:38:51.213Z",
+    "duration": 29667,
+    "testsRegistered": 3,
+    "passPercent": 33.33333333333333,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "d3819079-4fa8-414b-bdf7-ebc19ef2efb7",
+      "title": "",
+      "fullFile": "cypress\\e2e\\ocr_api\\upload_api.cy.js",
+      "file": "cypress\\e2e\\ocr_api\\upload_api.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "4110b8d8-bd79-4f32-8eed-fbab81b807ae",
+          "title": "📦 Testes de Upload via OCR API",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "✅ Upload de arquivo válido",
+              "fullTitle": "📦 Testes de Upload via OCR API ✅ Upload de arquivo válido",
+              "timedOut": null,
+              "duration": 340,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_UploadApiPage.default.enviarArquivo('documento_valido.pdf', 200);",
+              "err": {},
+              "uuid": "4a9bf155-1917-4397-90e9-d929cd310727",
+              "parentUUID": "4110b8d8-bd79-4f32-8eed-fbab81b807ae",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "❌ Upload com falha por tamanho excedido (>10MB)",
+              "fullTitle": "📦 Testes de Upload via OCR API ❌ Upload com falha por tamanho excedido (>10MB)",
+              "timedOut": null,
+              "duration": 28378,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "_UploadApiPage.default.enviarArquivo('documento_invalido_maior_10mb.pdf', 413);",
+              "err": {
+                "message": "AssertionError: expected 200 to equal 413",
+                "estack": "AssertionError: expected 200 to equal 413\n    at Context.eval (webpack://cypress-ocr-api/./cypress/support/page_objects/UploadApiPage.js:31:37)",
+                "diff": "- 200\n+ 413\n"
+              },
+              "uuid": "8d5f3d73-5645-4eaf-907a-7a9b17c39d45",
+              "parentUUID": "4110b8d8-bd79-4f32-8eed-fbab81b807ae",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "❌ Simulação de falha no OCR (resposta 500)",
+              "fullTitle": "📦 Testes de Upload via OCR API ❌ Simulação de falha no OCR (resposta 500)",
+              "timedOut": null,
+              "duration": 594,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "_UploadApiPage.default.enviarArquivo('documento_valido.pdf', 500, true);",
+              "err": {
+                "message": "AssertionError: expected 200 to equal 500",
+                "estack": "AssertionError: expected 200 to equal 500\n    at Context.eval (webpack://cypress-ocr-api/./cypress/support/page_objects/UploadApiPage.js:31:37)",
+                "diff": "- 200\n+ 500\n"
+              },
+              "uuid": "d40e823e-6b25-4ee7-afa2-1458164cfa02",
+              "parentUUID": "4110b8d8-bd79-4f32-8eed-fbab81b807ae",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "4a9bf155-1917-4397-90e9-d929cd310727"
+          ],
+          "failures": [
+            "8d5f3d73-5645-4eaf-907a-7a9b17c39d45",
+            "d40e823e-6b25-4ee7-afa2-1458164cfa02"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 29312,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress\\reports\\.jsons",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
